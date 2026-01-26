@@ -25,4 +25,11 @@ public class ClienteDaoImpl implements IClienteDao {
 		
 	}
 
+	@Override
+	@Transactional
+	public void save(Cliente cliente) {
+		em.persist(cliente); // with the entity manager we can save the object in BBDD
+		
+	}
+
 }

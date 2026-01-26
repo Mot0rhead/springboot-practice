@@ -1,0 +1,17 @@
+# Eclipse Workspace
+.metadata/
+
+# Eclipse project files
+.project
+.classpath
+.settings/
+
+# Maven
+**/target/
+
+# Logs
+*.log
+
+# H2 databases
+*.mv.db
+*.trace.db
