@@ -1,5 +1,0 @@
-package com.bolsaideas.springboot.errores.app.services;
-
-public interface UsuarioService {
-
-}

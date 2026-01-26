@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;spring-boot-web/src/main/resources/static/image/descarga.jfif&apos;" deleteContents="false" description="Delete resource &apos;spring-boot-web/src/main/resources/static/image/descarga.jfif&apos;" element1="/spring-boot-web/src/main/resources/static/image/descarga.jfif" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1749998548908"/>
-</session>

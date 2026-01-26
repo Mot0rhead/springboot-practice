@@ -1,5 +1,0 @@
-package com.bolsaideas.springboot.errores.app.errors;
-
-public class UsuarioNoEncontradoExeption {
-
-}
