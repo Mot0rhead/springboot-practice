@@ -1,0 +1,13 @@
+<html xmlns:th="htpp://www.thymeleaf.org">
+	<head>
+		<meta charset ="UTF-8">
+	
+	</head>
+	<body>
+		<h3>UPS! ha ocurrido un error 404</h3>
+		<div th:text="${titulo}"></div>
+		<div th:text="${usuario.id}"></div>
+		<div th:text="${usuario.nombre}"></div>
+		<div th:text="${usuario.apellido}"></div>
+	</body>
+</html>

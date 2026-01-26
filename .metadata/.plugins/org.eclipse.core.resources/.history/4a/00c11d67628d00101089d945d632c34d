@@ -1,0 +1,15 @@
+package com.bolsaideas.springboot.app.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ClienteController {
+
+	@GetMapping("/listar")
+	public String listar(Model model) {
+		model.addAttribute("titulo","Listado de clientes");
+		return "listar";
+	}
+}

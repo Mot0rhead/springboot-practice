@@ -1,0 +1,9 @@
+<html xmlns:th="htpp://www.thymeleaf.org">
+	<body>
+		<section th:fragment ="interceptor">
+			<div th:if="${tiempoTranscurrido != null}">
+				<span th:text="${tiempoTranscurrido}+' en milisegundos'"></span>
+			</div>
+		</section>
+	</body>
+</html>

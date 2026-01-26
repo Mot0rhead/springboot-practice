@@ -1,0 +1,14 @@
+package com.bolsaideas.springboot.errores.app.errores2;
+
+public class UsuarioNoEncontradoException extends RuntimeException{
+
+	private static final long serialVersionUID=1L; // esto no tiene importancia para este ejenplo, es para quitarnos el warning
+
+	public UsuarioNoEncontradoException(String message) {
+		
+		
+	}
+
+
+	
+}
