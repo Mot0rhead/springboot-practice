@@ -13,4 +13,8 @@ public interface IUploadFileService {
 	public String copy(MultipartFile filename) throws IOException;
 	
 	public boolean delete(String filename);
+	
+	public void deleteAll();
+	
+	public void init() throws IOException;
 }
