@@ -1,39 +1,57 @@
-<html xmlns:th="htpp://www.thymeleaf.org">
-	<head>
-		<meta charset ="UTF-8">
-		<tittle th:text="${titulo}"></tittle>
-	</head>
-	<body>
-		<section th:replace ="~{componentes/tiempo :: interceptor}"></section> <!--hacemos refencia a la seccion de componentes/ tiempo y que se llama interceptor-->
-		<h3 th:text="${titulo}"></h3>
-		<form th:action="@{/form}" th:object="${cliente}" method="post">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<div th:object="${cliente}" th:remove="tag">
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+		</ul>
+	</div>
+	<form th:action="@{/form}" th:object="${cliente}" method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td><input type="text" th:field="*{nombre}" />
+					<small th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+				</td>
+			</tr>
+			<tr>
+				<td>Apellido</td>
+				<td><input type="text" th:field="*{apellido}" />
+					<small th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
+				</td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" th:field="*{email}" />
+					<small th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Fecha</td>
+				<td><input type="text" th:field="*{createAt}" />
+					<small th:if="${#fields.hasErrors('createAt')}" th:errors="*{createAt}"></small>
+				</td>
+			</tr>
 			
-		 
-			<div>
-						<label for="nombre">Nombre</label>
-						<div>
-							<input type="text" id="nombre" th:field="*{nombre}">
-						</div>
-						<div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
-			</div>
-			
-			<div>
-						<label for="apellido">Apellido</label>
-						<div>
-							<input type="text" id="apellido" th:field="*{apellido}">
-						</div>
-						<div th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
-			</div>			
-			
-			<div>
-				<label for="email">Email</label>
-				<div>
-					<input type="text" id="email" th:field="*{email}">
-				</div>
-			</div>	
-					
-					
-		</form>
-		
-	</body>
+			<tr>
+				<td>Foto</td>
+				<td>
+					<input type="file" name="file"/>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<button type="submit">Crear cliente</button>
+				</td>
+			</tr>
+		</table>
+	<!--	<input type="hidden" th:field="*{id}" />-->
+	</form>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+
 </html>
